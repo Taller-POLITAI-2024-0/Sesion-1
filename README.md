@@ -1,2 +1,2 @@
-# Sesion-1
-Lunes 12 de febrero de 2024
+# Sesion1-intro
+Introducción a R y R-Studio
