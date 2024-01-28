@@ -3,7 +3,8 @@ title: "**<b style = 'color : #E34B2A;'>Sesión 1: Introducción a R y RStudio</
 subtitle: 'Taller de Estadística aplicada en R para ciencias sociales - POLITAI'
 date: "2023-6-4"
 date-modified: ''
-author: "**[Joel Ccallocunto](https://github.com/luccemhu)** \n a20196510@pucp.edu.pe & **[Carlos Crespín](https://github.com/krlos20203563)** \n  "
+author1: "**[Joel Ccallocunto](https://github.com/luccemhu)** \n a20196510@pucp.edu.pe & **[Carlos Crespín](https://github.com/krlos20203563)** \n  "
+author2:  "auth"
 theme:
   dark: darkly
   light: flatly
@@ -26,11 +27,7 @@ output:
 -->
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-```
-
-```{r,echo=FALSE, out.width="65%",fig.align="center"}
+```{r,echo=FALSE, out.width="100%",fig.align="center"}
 knitr::include_graphics("./images/politai.jpg")  # Para plotear cualquier imagen
 # Puedes centrar, aumentar o disminuir el tamaño del gráfico (buscar códigos en internet) 
 ```
