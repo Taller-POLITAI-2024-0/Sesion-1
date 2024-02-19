@@ -1,7 +1,7 @@
 ---
 title: "**<b style = 'color : #E34B2A;'>Sesión 1: Introducción a R y RStudio</b>**"
 subtitle: 'Taller de Estadística aplicada en R para ciencias sociales - POLITAI'
-date: "2023-6-4"
+date: "2024-2-18"
 date-modified: ''
 author1: "**[Joel Ccallocunto](https://github.com/luccemhu)** \n a20196510@pucp.edu.pe & **[Carlos Crespín](https://github.com/krlos20203563)** \n  "
 author2:  "auth"
@@ -32,6 +32,10 @@ knitr::include_graphics("./images/politai.jpg")  # Para plotear cualquier imagen
 # Puedes centrar, aumentar o disminuir el tamaño del gráfico (buscar códigos en internet) 
 ```
 
+::: callout-note
+Presesión: <https://taller-politai-2024-0.github.io/Sesion-0.1/>
+:::
+
 Configurar el directorio de trabajo
 ============================================================
 
@@ -40,6 +44,10 @@ Configurar el directorio de trabajo
 - Para encontrar nuestro lugar actual de trabajo o el "Set Working Directory", debemos correr el siguiente comando en la consola: `getwd()` (sin las comillas invertidas). Si ejecuta este comando desde un archivo Rmd, obtendrá la ubicación del archivo script actual.
 
 - Para cambiar nuestro directorio de trabajo a uno específico, podemos utilizar la siguiente función:
+
+```{r}
+#setwd()
+```
 
 ````markdown
 setwd() # Establecer el nuevo directorio
@@ -77,7 +85,6 @@ knitr::include_graphics("./images/interface.jpg")
 - Realizar cálculos y operaciones matemáticas como una calculadora avanzada.
 
 - Visualizar y registrar el output de nuestros códigos
-
 
 ```{r}
 cars
@@ -140,6 +147,11 @@ Vamos a requerir que se creen una cuenta en GitHub. Esta plataforma permite aloj
 
 -   Advertimos los objetos creados, pero tambien dataframes, tibbles, listas, entre otros.
 
+```{r}
+valor = 9+2
+```
+
+
     - ¿Qué es una variable?
 
        - Una variable es un espacio en la computadora en el que guardamos un objeto (como una caja con un nombre determinado para guardar cosas).
@@ -163,6 +175,13 @@ boxplot(airquality)
 ```{r}
 #install.packages("tinytex")
 ```
+
+```{r}
+#?cars
+help(mean)
+```
+
+
 
 
 **5. Menú superior**
@@ -222,6 +241,9 @@ Pero también es importante mejorar nuestros reportes...
   - 'comillas simples' <- alt + 3 + 9 <- ''
 
   - `comillas invertidas` <- alt + 9 + 6 <- ``
+```{r}
+
+```
 
   - Para escribir una nueva oración, debemos dejar una linea de código para que no se junte todo en un solo párrafo.
 
@@ -263,9 +285,17 @@ Consideremos otros consejos respecto a los code chunk:
 
 Nota: para advertir los cambios, es necesario comparar el script y el informe.
 
+```
+```
+
 ```{r}
 # Code chunk básico
 ```
+´
+```{python}
+print("Hola mundo")
+```
+
 
 - Código para no mostrar las advertencias y mensajes para todo nuestro reporte:
 
@@ -319,7 +349,9 @@ Podemos ver todos los atajos en el **Panel de atajos**: tools \> Keyboard Shortc
 - **Correr/ejecutar code** <- Alt + Enter
 ```{r}
 names(starwars)
+#mean()
 ```
+
 
 - **Guardar avance** <- Ctrl + S
 
@@ -345,13 +377,17 @@ names(starwars)
 
 - Para insertar/crear secciones (títulos) <- Ctrl/cmd + shift + R
 
+
+
+
+
 **Instalación de paquetes**
 ============================================================
 
 Para instalar un paquete solo debes correr el siguiente comando con el nombre del paquete dentro del paréntesis entre comillas. 
 
 ```{r}
-#install.packages("tidyverse")
+install.packages("tidyverse")
 ```
 
 - Cuando instalas un paquete estás descargando una serie de funciones con un solo comando.
@@ -375,6 +411,9 @@ Pero el paquete {pacman} nos permite realizar ambas acciones al mismo tiempo de 
 - Instalar el paquete pacman en la consola:
 
     install.packages("pacman")
+```{r}
+#install.packages("pacman")
+```
 
 - Luego correr en un code chunk lo siguiente:
 
@@ -406,7 +445,7 @@ Es importante conservar un orden para realizar análisis de datos o una investig
 
     -   literatura
 
-Les exhorto revisar los foros de la comunidad de programadores como [StackOverflow](https://stackoverflow.com/) en la que se realizan y absuelven dudas frecuentes o específicas.
+Pueden revisar los foros de la comunidad de programadores como [StackOverflow](https://stackoverflow.com/) en la que se realizan y absuelven dudas frecuentes o específicas.
 
 **Elementos fundamentales**
 ============================================================
@@ -446,7 +485,7 @@ Es el elemento más básico que existe en el entorno de R
   - Son valores numéricos:
   
 ```{r}
-3
+tres <- 3
 9*5 
 7+6
 ```
@@ -484,6 +523,7 @@ Estos vectores también pueden ser de distinto tipo:
 c(9, 9*5)
 c("mes", "un mes")
 c(9*5, "mes")
+
 ```  
 
 ## **Objetos**
@@ -501,6 +541,8 @@ c(9*5, "mes")
 ```{r}
 a <- 7 + 6
 a
+
+7 + 6
 ```  
   
 En el ejemplo anterior, se ha creado un objeto `a` y luego se ha llamado ese mismo objeto para que muestre lo que lleva adentro (13). 
@@ -531,7 +573,7 @@ Una parte clave para iniciar el manejo del programa es identificar los diversos 
 
     | Nombre   | Ejemplo | Name      |
     |----------|---------|-----------|
-    | Entero   | 1	     | Integer   |
+    | Entero   | 1	     | Interger   |
     | Numérico | 1.8     | Numeric   |
     | Caracter | "uno" 	 | Character |
     | Factor   | uno     | Factor    |
@@ -605,6 +647,7 @@ cuan1 <- "genteeeeeee,"
 cuan2 <- "ahora, sí se acabó el recreo"
 cuanti <- paste(cuan1, cuan2)
 print(cuanti)
+cuanti
 ```
 
 En un vector no se permite que se realicen operaciones aritméticas; no obstante, podríamos calcular la frecuencia con que se repite cada elemento. Por ejemplo:
@@ -637,6 +680,10 @@ Nótese que aunque se ha incluido un número a propósito (el 3) dentro de un ve
     - Colores: rojo, verde, amarillo, ...
     - Días de la semana: L/M/M/J/V/S/D
     - Entre otros...
+
+```{r}
+factor()
+```
 
   + En analisis de datos, las variables categoricas se tratan de manera diferente a las variables continuas o numericas.
   
@@ -719,7 +766,7 @@ Por ejemplo:
 
 ```{r}
 df <- data.frame(
-  persona = c("Joel", "Santiago", "María Pía", "Pavel"),
+  persona = c("Joel", "Santiago", "María Pía", "Ed"),
   nota = c(15, 17, 20, 16),
   aprueba = c(F, T, T, T))
 df
@@ -727,22 +774,63 @@ df
 
 En este dataframe de valores aleatorios podemos ver que tenemos los tres tipos de vectores = character, numérico, y lógico. Cabe mencionar que deben haber el mismo número de valores dentro de cada vector, es por ello que, cada vector cuenta con 4 valores.
 
-Asimismo, un dataframe nos permite generar variables a partir de los valores de otras variables presentes en el dataframe. Por ejemplo:
 
-```{r}
-df$mensaje <- ifelse(df$aprueba,
-                       "Felicitaciones",
-                       "Más suerte a la próxima")
-df
-```
-
-#### Pero en este curso, comúnmente, también encontraremos y, a veces, crearemos:
+#### Pero también encontraremos y, a veces, crearemos:
 
 - lists, que parecen vectores pero tienen elementos de diferentes tipos
 
 - functions, que se denominan closures (cierres) en R y operan con datos
 
 - Entre otros
+
+
+#  Pipe operator
+
+A diferencia del estilo tradicional de programar en R, actualmente existe una tendencia a utilizar el pipe operator introducido en el paquete {magrittr} que tiene este aspecto %>%. La pipeta nos permite conectar funciones de manera consecutiva antes que una dentro de otra. Por ejemplo, si quisieramos replicar la tabla de porcentajes anterior en estilo moderno sería de la siguiente manera:
+
+```{r}
+# Para utilizar el operador pipe hay que desplegar el paquete dplyr
+pacman::p_load(dplyr)
+
+cars %>% table() %>% prop.table() * 100
+```
+
+# Importar base de datos en R... 
+
+1. Desde archivos locales con la librería rio:
+
+```{r}
+library(rio) # Importar data, versatil
+data_rio <- import("usa.sav")
+
+# Usemos el pipe operator
+# Lo exportamos en formato xlsx (para excel)
+
+pacman::p_load(writexl) # Para exportar en excel
+
+data_rio %>% write_xlsx("usa.xlsx")
+```
+
+2. Desde Google Drive:
+
+```{r}
+library(readxl)
+link1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWCF4WSPdI77-xZKDdufjlr6szhPe372FYleEPcJfPkj0JiRXFNyt9tS2KzcWqlA/pub?gid=1281997847&single=true&output=csv"
+google_usa = read.csv(link1)
+str(google_usa)
+
+```
+
+3. Desde GitHub:
+
+```{r}
+# Estos datos nos dan información sobre ex convictos y el tiempo que demoran 
+# en volver a la cárcel [Allison 2010]:
+
+link = "https://github.com/luccemhu/EDIT-Clases-E2/raw/main/Sesion-5/carcel.csv"
+carcel = read.csv(link, stringsAsFactors = T)
+str(carcel)
+```
 
 Programando en R
 ============================================================
@@ -762,22 +850,22 @@ knitr::include_graphics("./images/programando.jpg")
 
 # **Referencias**:
 
--   Mendoza, B. (2018). R para principiantes. Libro electrónico. En https://bookdown.org/jboscomendoza/r-principiantes4/
+-   Mendoza, B. (2018). R para principiantes. Libro electrónico. <https://bookdown.org/jboscomendoza/r-principiantes4/>
 
--   Hanck, C., Arnold, M., Gerber, A., & Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen, 1-9. En https://www.econometrics-with-r.org/
+-   Hanck, C., Arnold, M., Gerber, A., & Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen, 1-9. <https://www.econometrics-with-r.org/>
 
 -   Mackenzie, Charles E. 1980. Coded character sets: history and development. Reading, Mass:
-Addison-Wesley Pub. Co. En https://archive.org/details/mackenzie-coded-char-sets
+Addison-Wesley Pub. Co. <https://archive.org/details/mackenzie-coded-char-sets>
 
--   Santiago Sotelo & María Pía van Oordt (2023). Qlab.
+-   Sotelo, S., & Van Oordt M., P. (2023). Laboratorio de Inteligencia Artificial y Métodos Computacionales en Ciencias Sociales - QLAB. <https://qlab.pucp.edu.pe/>
 
 -   POL278 - Estadística para el análisis político 1. Jefes de práctica: Alexander Benites, Reyna Osorio, Gabriel Ramos y Almendra Rodriguez.
 
-- [Karina Alcántara & Lizette Crispín (2023)](https://karinaalc.github.io/Estadistica-2/pd1.html).
+-  Alcántara, K.,  & Crispín, L. (2023). <https://karinaalc.github.io/Estadistica-2/pd1.html>
 
--   Tiscornia Pablo - Introducción al procesamiento de datos con R para Ciencias Sociales. Aplicación práctica en la Encuesta Permanente de Hogares (EPH-INDEC). En https://intro-r-eph.netlify.app/bio.html)
+-   Tiscornia P. (2023). Introducción al procesamiento de datos con R para Ciencias Sociales. Aplicación práctica en la Encuesta Permanente de Hogares (EPH-INDEC). <https://intro-r-eph.netlify.app/bio.html>
 
--   Weksler, K. & Shokida. Curso de R para procesamiento de datos de la Encuesta Permanente de Hogares. En https://diegokoz.github.io/Curso_R_EPH_clases/
+-   Weksler, K. & Shokida. Curso de R para procesamiento de datos de la Encuesta Permanente de Hogares. En <https://diegokoz.github.io/Curso_R_EPH_clases/>
 
 -   Wickham, H., & Grolemund, G. (2016). R for data science: import, tidy, transform, visualize, and model data. " O'Reilly Media, Inc." En [First Edition](https://r4ds.had.co.nz/) y [Second Edition](https://r4ds.hadley.nz/)
 

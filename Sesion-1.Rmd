@@ -1,55 +1,18 @@
 ---
-title: "**<b style = 'color : #E34B2A;'>Sesión 1: Introducción a R y RStudio</b>**"
-subtitle: 'Taller de Estadística aplicada en R para ciencias sociales - POLITAI'
-date: "2023-6-4"
-date-modified: ''
-author: "**[Joel Ccallocunto](https://github.com/luccemhu)** \n a20196510@pucp.edu.pe & **[Carlos Crespín](https://github.com/krlos20203563)** \n  "
-theme:
-  dark: darkly
-  light: flatly
-toc: true
-always_allow_html: true
-format:
-  html:
-    mainfont: Georgia
-    self-contained: true
+title: "Sesión 1: Introducción a R y RStudio"
+author: "POLITAI"
+date: "`r Sys.Date()`"
+output: html_document
 ---
 
-
-```{r,echo=FALSE, out.width="65%",fig.align="center"}
+```{r,echo=FALSE, out.width="100%",fig.align="center"}
 knitr::include_graphics("./images/politai.jpg")  # Para plotear cualquier imagen
 # Puedes centrar, aumentar o disminuir el tamaño del gráfico (buscar códigos en internet) 
 ```
 
-¿Qué buscamos con el taller?
-============================================================
-
-- Familiarizarnos con el lenguaje, el uso de R y explorar los formas más comunes y útiles para el análisis de datos.
-
-- No es un curso exhaustivo que cubra todas las aplicaciones y posibilidades que se pueden aprovechar con R.
-
-  - Ejemplos de informes...
-
-    - En Github: [Influencia de variables económicas-sociales en la cantidad de protestas a nivel mundial](https://krlos20203563.github.io/Proyecto-Grupal-Estadistica-para-el-Analisis-Politico-2/)
-
-    - En Rpubs: [¿Los países productores de petróleo son los Estados más contaminantes?](https://rpubs.com/LuchoValverde/920711)
-
-Repasemos la instalación de...
-============================================================
-
-  - [**R y Rstudio**](https://luccemhu.github.io/)
-  
-```{r,echo=FALSE,fig.show="hold", out.width="50%",fig.cap="Íconos de R y Rstudio, respectivamente"}
-knitr::include_graphics("./images/R_RStudiologo.jpg")
-```
-
-## Otra opción es RStudio Cloud
-
-Esta plataforma se define como un Cloud computing. Es decir, el hardware, software, datos y recursos que utilizas para tus cursos de estadística pasan de estar en nuestras computadoras a “la nube”.
-
-  - [Pueden crearse una cuenta en el siguiente enlace de Posit Cloud: **Log in or Sign Up**](https://login.posit.cloud/register?redirect=https%3A%2F%2Fclient.login.posit.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0)
-   
-    - [Para profundizar revisen el siguiente enlace: **Rstudio Cloud: Primeros Pasos**](https://www.youtube.com/watch?v=whBz89WoxPY)
+::: callout-note
+Presesión: <https://taller-politai-2024-0.github.io/Sesion-0.1/>
+:::
 
 Configurar el directorio de trabajo
 ============================================================
@@ -79,48 +42,6 @@ data = import("./dfs/pavimentandoconvotos.sav")
 ````
 
 - Luego aprenderán otros modos para importar bases de datos directamente desde internet.
-
-¿Qué es R?
-============================================================
-
-R es un lenguaje y software que permite análisis estadísticos y gráficos.
-
-  - Lenguaje porque posee su propia sintaxis, a partir de la cual se pueden escribir sentencias y comandos.
-
-  - Es un software porque es al mismo tiempo un programa con múltiples funcionalidades
-
-## ... ¿Y RStudio?
-
-Rstudio es un integrated development environment - [IDE](https://posit.co/products/open-source/rstudio/): un interfaz amigable y poderoso para trabajar con R.
-
-Pero si hay más softwares estadísticos, ¿por qué usamos (o deberíamos usar) R?
-============================================================
-
-- Costo: Software libre
-
-- Potencia (N° herramientas): Comunidad que crea nuevas herramientas (packages) constantemente.
-
-- Accesibilidad al usuario: Lenguaje de Programación R (Antes de 1970)
-
-- Versatilidad: Muchas extensiones: [GIS](https://mappinggis.com/2019/02/r-y-gis-que-es-r-y-su-relacion-con-los-sig/), [Quarto](https://quarto.org/), etc.
-
-## ¿Pará qué podemos usar R?
-
-Proporciona una amplia variedad de herramientas para generar visualizaciones y personalización de gráficos de datos de alta calidad, además, junto con Rstudio permiten la automotización de reportes y la replicabilidad de los análisis mediante el uso de scripts.
-
-- Pero también...
-
-  - Es una herramienta de procesamiento estadístico: limpieza, manejo, almacenamiento de datos e integración con distintas bases de datos o lenguajes de otros programas (Spss, Python o Stata)
-
-  - Amplia variedad de técnicas estadísticas para el análisis de datos: modelos lineales, pruebas estadísticas, análisis de series de tiempo, clasificación, agrupación, enter otros.
-
-  - Posibilidad de creación de librerías propias para trabajos en específico
-
-  - Implementar análisis con algoritmos de Machine Learning, data mining y big data. 
-    
-  - Web Scraping, generar tableros o aplicaciones como shiny
-
-- *Después de lo que se ha expuesto, les animo a que continúen explorando R y sus diversos usos a través de diferentes fuentes, siendo este curso una de ellas.*
 
 **INTERFAZ**
 ============================================================
@@ -220,8 +141,9 @@ Se encuentran los archivos del usuario como si fuera la carpeta de "Mis Document
 ```{r}
 boxplot(airquality)
 ```
+
 ```{r}
-install.packages("tinytex")
+#install.packages("tinytex")
 ```
 
 
@@ -466,7 +388,10 @@ Es importante conservar un orden para realizar análisis de datos o una investig
 
     -   literatura
 
-Les exhorto revisar los foros de la comunidad de programadores como [StackOverflow](https://stackoverflow.com/) en la que se realizan y absuelven dudas frecuentes o específicas.
+Pueden revisar los foros de la comunidad de programadores como [StackOverflow](https://stackoverflow.com/) en la que se realizan y absuelven dudas frecuentes o específicas.
+
+
+
 
 **Elementos fundamentales**
 ============================================================
@@ -779,7 +704,7 @@ Por ejemplo:
 
 ```{r}
 df <- data.frame(
-  persona = c("Joel", "Santiago", "María Pía", "Pavel"),
+  persona = c("Joel", "Santiago", "María Pía", "Ed"),
   nota = c(15, 17, 20, 16),
   aprueba = c(F, T, T, T))
 df
@@ -787,16 +712,7 @@ df
 
 En este dataframe de valores aleatorios podemos ver que tenemos los tres tipos de vectores = character, numérico, y lógico. Cabe mencionar que deben haber el mismo número de valores dentro de cada vector, es por ello que, cada vector cuenta con 4 valores.
 
-Asimismo, un dataframe nos permite generar variables a partir de los valores de otras variables presentes en el dataframe. Por ejemplo:
-
-```{r}
-df$mensaje <- ifelse(df$aprueba,
-                       "Felicitaciones",
-                       "Más suerte a la próxima")
-df
-```
-
-#### Pero en este curso, comúnmente, también encontraremos y, a veces, crearemos:
+#### Pero también encontraremos y, a veces, crearemos:
 
 - lists, que parecen vectores pero tienen elementos de diferentes tipos
 
@@ -804,347 +720,57 @@ df
 
 - Entre otros
 
+#  Pipe operator
+
+A diferencia del estilo tradicional de programar en R, actualmente existe una tendencia a utilizar el pipe operator introducido en el paquete {magrittr} que tiene este aspecto |>. La pipeta nos permite conectar funciones de manera consecutiva antes que una dentro de otra. Por ejemplo, si quisieramos replicar la tabla de porcentajes anterior en estilo moderno sería de la siguiente manera:
+
+```{r}
+# Para utilizar el operador pipe hay que desplegar el paquete dplyr
+pacman::p_load(dplyr)
+cars |> 
+  table() |>
+  prop.table() * 100
+```
+
+# Importar base de datos en R... 
+
+1. Desde archivos locales con la librería rio:
+
+```{r}
+library(rio)
+data_rio <- import("usa.sav")
+
+# Usemos el pipe operator
+
+# Lo exportamos en formato xlsx (para excel)
+pacman::p_load(writexl) # Para exportar en excel
+data_rio %>% 
+write_xlsx("usa.xlsx")
+```
+
+2. Desde Google Drive:
+
+```{r}
+library(readxl)
+link1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWCF4WSPdI77-xZKDdufjlr6szhPe372FYleEPcJfPkj0JiRXFNyt9tS2KzcWqlA/pub?gid=1281997847&single=true&output=csv"
+google_usa = read.csv(link1)
+str(google_usa)
+
+```
+
+3. Desde GitHub:
+
+```{r}
+# Estos datos nos dan información sobre ex convictos y el tiempo que demoran 
+# en volver a la cárcel [Allison 2010]:
+
+link = "https://github.com/luccemhu/EDIT-Clases-E2/raw/main/Sesion-5/carcel.csv"
+carcel = read.csv(link, stringsAsFactors = T)
+str(carcel)
+```
+
 Programando en R
 ============================================================
 ```{r,echo=FALSE, out.width="115%",fig.align="center", fig.cap="Fuente: Benites, A... & Rodríguez, A. (2022). PPT curso de POL278 - Estadística para el análisis político 1 - 2022-1"}
 knitr::include_graphics("./images/programando.jpg") 
 ```
-
-
-
-# TYDIVERSE???
-
-Tidyverse es un conjunto de de paquetes de R para ciencia de datos, nos
-ayuda a trabajar las bases de datos. Ha sido desarrollado por RStudio.
-
--   **Es consistente** : Todos los paquetes tienen una misma estructura
-
--   **Concatenable**: Siempre se pueden unir pequeñas partes para
-    resolverlos
-
--   **Funcional**: Como casi todo R, promueve la programación
-
-Para cada paso de tratamiento de datos existe un paquete, se puede pasar
-desde cargar/importar los datos, limpiarlos, transformarlos, visualizar,
-modelarlos y finalmente comunicarlos.
-
-Para importar datos tenemos readr, haven y readxl. Para limpiar los
-datos usamos *tidyr*, para transofrmar los datos se usa dyplr, que lo
-veremos a continuación, para modelar se usa purr o broom, para
-visualizar se usa ggplot2. Finalmente, para comunicar se usa knitr para
-publicar los resultados por html, pdf, ppt. y rmarkdown es la estructura
-de knitr.
-
-Algunos les gusta usarlo porque facilita el análisis y manipulación de
-datos y es más rápido, pero, por otro lado, tiene otra lógica en la
-programación. En vez de usar "," para diferenciar entre comandos, usar
-%\>%,
-
-Instalando el paquete de tidyverse te incluye los 8 paquetes. Pero, eso
-sí, toma más tiempo de lo debido. Por eso, en esta ocasión, se ha
-descargado los que necesitaremos ahora
-
-```{r,warning=FALSE,message=FALSE}
-# Paquetes que se usarán 
-library(dplyr)
-library(ggplot2)
-library(data.table)
-library(devtools)
-library(foreign)
-library(rio)
-```
-
-#### Sobre la data a analizar
-
-#### Importar y preparar base de datos
-
-Un método más rápido y versatil:
-
-```{r}
-#getwd() 
-#setwd("")
-#dir()
-
-library(rio)
-df_usa = import("usa.sav")
-
-names(df_usa)
-str(df_usa)
-class(df_usa) 
-head(df_usa)
-summary(df_usa) # Resumen estadistico
-table(df_usa$consipol)
-```
-
-
-
-
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-
-usa <- read.spss("usa.sav",
-          use.value.labels = T, 
-          to.data.frame=TRUE)
-str(usa)#Ver estructura de bases de datos, tipo de variable
-```
-
-## **PAQUETE DPLYR**
-
-El paquete dplyr es el más útil en R para la manipulación de datos, una
-de las ventajas es que se pueda usar el pipe para combinar diferentes
-funciones en R. Para no tener que escribirlo, se genera mediante control
-shift M. En pocas palabras, reemplaza la "," para concatenar(unir)
-varios comandos.
-
-### **FILTER**: filtrar filas según un criterio
-
-Filtra casos o filas que cumplen con el criterio. Por ejemplo, aca
-estamos filtrando de la data `usa.sav` las personas que son judíos
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-usa %>%
-  filter(relig=="Catolico", intecamp=="1. Mucho") 
-
-usa %>%
-  filter(edad >= 50)
-
-usa %>%
-  filter(intecamp=="1. Mucho", sexo=="Hombre", consipol=="1. Muy liberal")
-
-usa %>%
-  filter(intecamp=="1. Mucho", sexo=="Mujer", consipol=="7. Muy Conservador")
-```
-
-### **SELECT**: Seleccionando subconjunto de variables
-
-Selecciona columnas o mejor dicho, variables de su conjunto de datos,
-según nombre.
-
-En este comando estamos especificando que queremos seleccionar de la
-data usa, las variables interés en las campañas (intecamp) y sexo.
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-inte= usa %>%
-  select(intecamp, sexo)
-inte
-```
-
-Si queremos quitar variable ponemos el signo de menos. Salen todas las
-varibales menos las del si voto en las elecciones del 96 (voto96) y por
-quién.
-
-Lo podríamos volver un objeto para poder trabajar con ello
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-# quitando variables
-usa %>%
-  select(-voto96, -quien96)
-menos96 <- usa %>%
-  select(-voto96, -quien96)
-menos96 
-```
-
-### **SUMMARISE**: Crear resumenes de datos
-
-Resume cualquiera de las funciones anteriores, para aplicarla a un grupo
-de datos.
-
-En este caso, queremos sacar el promedio de aprobación de Al Gore luego
-de su gestión. Para eso usamos sumarise. Mencionamos los datos de la
-base usa, luego la variable que se creará en base a ella, que será la
-media de la variable gorepst, omitiendo los valores perdidos
-
-Solo con variables numéricas (ojo)
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-#Promedio aprobación Al Gore post elecciones
-usa %>%
-  summarise(promgorepost = mean(gorepst, na.rm = T))
-
-#CORROBORAMOS
-class(usa$gorepst) 
-
-```
-
-Acá nos menciona un error, dice que el argumento no es numérico. Las
-convertimos
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-#CORREGIMOS
-usa$gorepst<- as.numeric(usa$gorepst)
-usa$gorepre<- as.numeric(usa$gorepre)
-
-usa %>%
-  summarise(MediaAprobGorePost = mean(gorepst, na.rm = T))
-```
-
-### **COUNT**: contar casos en base a una variable
-
-Nos ayuda a contar las observaciones.
-
-Vamos a contar los casos de las personas de acuerdo al nivel educativo.
-
-Se puede observar que la mayoría tiene un nivel educativo mayor al de
-secundaria.
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-usa %>%
-  count(relig)
-
-usa %>%
-  count(educ,sort = FALSE) #numero de personas en base a nivel educativo, con SORT=T estamos diciendo que nos ordene los datos de manera descendente
-
-```
-
-### **MUTATE Y ARRANGE**
-
-Crea nuevas columnas conservando las variables existentes. En esta
-ocasión estamos creando una nueva variable que vendría a ser la
-diferencia de la aprobación de Al Gore antes y luego de su gestión.
-
-Esta función es un poco más larga, pero no es difícil. Primero crearemos
-una nueva variable que será la diferencia de la aprobación de Al Gore
-antes y luego de su gestión, y luego de eso, queremos que esa variable
-creada, se ordene de manera descendente. Finalmente, queremos que los
-resultados muestre únicamente las variables de ID, difgore, gorepre y
-gorepst para ver la diferencia.
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-usagoredesc<- usa %>%
-  mutate(difgore =  gorepst - gorepre) %>% arrange(., desc(gorepst)) %>%
-  select(id, difgore, gorepre, gorepst)
-```
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,include=FALSE}
-#de manera ascendente
-usagoreasc <- usa %>%
-  mutate(difgore =  gorepst - gorepre) %>%
-  arrange(difgore) %>%
-  select(id, difgore, gorepre, gorepst)
-```
-
-Vamos a poner gorepost como función en arrange para ver su aprobación
-más alta.
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-#diferencia más alta
-usa %>%
-  mutate(difgore =  gorepst - gorepre) %>%
-  arrange(desc(difgore))  %>%
-  select(id, difgore, gorepre, gorepst)
-
-```
-
-### **TRANSMUTE**
-
-También existe la función transmute, que realiza lo mismo solo que
-muestra únicamente la nueva variable creada (no se agrega a la base de
-datos)
-
-Crearemos la vida variable de disfrencia pero con la aprobación George
-Bush
-
-Vamos a cambiarla a numérica, para evitar que ocurra el mismo error.
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-usa$gbushpst<- as.numeric(usa$gbushpst)
-usa$gbushpre<- as.numeric(usa$gbushpre)
-
-usabush <- usa %>%
-  transmute(difbush = gbushpst - gbushpre) %>%
-  arrange(desc(difbush))
-
-```
-
-### **group_by**: Agrupar datos
-
-Agrupa diferentes observaciones de manera que el conjunto de datos
-original no cambie.
-
-Aca estamos indicando que se agrupe la data en base a posición política.
-
-Finalmente, agruparemos datos y usaremos más de una función
-
-En el primer ejemplo, lo que haremos es agrupar los datos mediante la
-posición política, y usaremos sumarise para sacar el promedio de la
-aprobación de Bush post gestión Vemos los resultados. Vemos una
-tendencia que los más conservadores tenían una aprobación más alta de
-Bush
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-usa.g <- usa %>% 
-  group_by(consipol) %>% 
-  summarise(mean = mean(gbushpst,na.rm=TRUE), n = n())
-usa.g
-```
-
-Ahora con Al Gore ¿los datos se voltean? Los encuestados que se
-consideran muy Liberales, aprueban más la gestión de Al Gore, a
-diferencia de los muy conservadores.
-
-```{r, results = 'hide',  fig.show='hide',warning=FALSE,message=FALSE}
-usa.b <- usa %>% 
-  group_by(consipol) %>% 
-  summarise(mean = mean(gorepst,na.rm=TRUE), n = n())
-usa.b
-```
-
-
-
-
-
-
-
-
-
-# **Referencias**:
-
--   Mendoza, B. (2018). R para principiantes. Libro electrónico. En https://bookdown.org/jboscomendoza/r-principiantes4/
-
--   Hanck, C., Arnold, M., Gerber, A., & Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen, 1-9. En https://www.econometrics-with-r.org/
-
--   Mackenzie, Charles E. 1980. Coded character sets: history and development. Reading, Mass:
-Addison-Wesley Pub. Co. En https://archive.org/details/mackenzie-coded-char-sets
-
--   Santiago Sotelo & María Pía van Oordt (2023). Qlab.
-
-- [Karina Alcántara & Lizette Crispín (2023)](https://karinaalc.github.io/Estadistica-2/pd1.html).
-
--   Tiscornia Pablo - Introducción al procesamiento de datos con R para Ciencias Sociales. Aplicación práctica en la Encuesta Permanente de Hogares (EPH-INDEC). En https://intro-r-eph.netlify.app/bio.html)
-
--   Weksler, K. & Shokida. Curso de R para procesamiento de datos de la Encuesta Permanente de Hogares. En https://diegokoz.github.io/Curso_R_EPH_clases/
-
--   Wickham, H., & Grolemund, G. (2016). R for data science: import, tidy, transform, visualize, and model data. " O'Reilly Media, Inc." En [First Edition](https://r4ds.had.co.nz/) y [Second Edition](https://r4ds.hadley.nz/)
-
-# **Más recursos**:
-
--   [Data Política: Manual R para estadística aplicada al análisis político. Data Política: Lima.](https://christianchiroquer.github.io/ManualdeR/r-un-lenguaje-de-programaci%C3%B3n.html)
-
--   POL278 - Estadística para el análisis político 1. Jefes de práctica: Alexander Benites, Reyna Osorio, Gabriel Ramos y Almendra Rodriguez.
-
--   [Plantilla de los principales comandos del curso ESTADISTICA PARA EL ANALISIS POLITICO 1](https://github.com/Pruebas-Estadistica-2/REPASO-CODES)
-
--   [Messy data](https://tidyr.tidyverse.org/)
-
--   [Tidy data](https://tidyr.tidyverse.org/articles/tidy-data.html)
-
--   [The R Graph Gallery](https://r-graph-gallery.com/)
-
--   [R-Ladies Lima](https://www.youtube.com/c/RLadiesLima/videos?app=desktop&view=0&sort=dd&shelf_id=0)
-
--   [Data Wrangling](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-
--   [Data Transformation](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf)
-
--   [Stringr](https://posit.co/wp-content/uploads/2022/10/strings-1.pdf)
-
--   [Tipos de variables y escalas de medición](https://www.odiolaestadistica.com/estadistica-r/tipos-de-variables/)
-
--   [Por qué las estadísticas inteligentes son la clave para combatir el crimen](https://www.ted.com/talks/anne_milgram_why_smart_statistics_are_the_key_to_fighting_crime?language=es)
-
-
-
-El contenido de este curso se ofrece bajo una licencia [Dominio público](https://en.wikipedia.org/wiki/Public_domain). El contenido de este curso puede considerarse bajo esta licencia a menos que se notifique de manera diferente. 
-
-
-
